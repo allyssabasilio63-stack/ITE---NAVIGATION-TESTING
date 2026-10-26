@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600&display=swap");
+
+:root {
+    --night: #22295c;
+    --night-deep: #171c42;
+    --moon: #ffd166;
+    --coral: #ff6b6b;
+    --paper: #f4f8ff;
+    --ink: #1b1f3b;
+    --muted: #55597a;
+    --radius: 16px;
+    --heading: "Baloo 2", "Trebuchet MS", sans-serif;
+    --body: "Nunito", "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--ink);
+    background: var(--paper);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--heading);
+    line-height: 1.15;
+}
+
+:focus-visible {
+    outline: 3px solid var(--coral);
+    outline-offset: 3px;
+}
+
+/* Buttons */
+button {
+    font-family: var(--heading);
+    font-weight: 600;
+    font-size: 1.05rem;
+    border: none;
+    border-radius: 999px;
+    padding: 0.7rem 1.6rem;
+    cursor: pointer;
+    background: var(--moon);
+    color: var(--night-deep);
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    background: #ffc233;
+}
+
+/* Navigation */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 6%;
+    background: var(--night-deep);
+    color: #fff;
+}
+
+.navbar h1 {
+    font-size: 1.6rem;
+    color: var(--moon);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.8rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+    border-bottom-color: var(--moon);
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 78vh;
+    display: flex;
+    align-items: center;
+    padding: 4rem 6%;
+    color: #fff;
+    background: linear-gradient(160deg, var(--night) 0%, var(--night-deep) 100%);
+}
+
+/* The moon: the one memorable element */
+.hero::before {
+    content: "";
+    position: absolute;
+    right: 8%;
+    top: 50%;
+    width: min(38vw, 420px);
+    aspect-ratio: 1;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: var(--moon);
+    box-shadow: 0 0 0 28px rgba(255, 209, 102, 0.12),
+        0 0 0 64px rgba(255, 209, 102, 0.06);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 34rem;
+}
+
+.hero-content h2 {
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #dfe5ff;
+}
+
+/* About */
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 6%;
+}
+
+.about-image img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+
+.about-content h2 {
+    font-size: 2.2rem;
+    color: var(--night);
+    margin-bottom: 1rem;
+}
+
+.about-content p {
+    color: var(--muted);
+    max-width: 34rem;
+}
+
+.about-content p + p {
+    margin-top: 1rem;
+    color: var(--ink);
+    font-weight: 600;
+}
+
+/* Stories */
+.stories {
+    padding: 5rem 6%;
+    background: #fff;
+    text-align: center;
+}
+
+.stories h2 {
+    font-size: 2.4rem;
+    color: var(--night);
+}
+
+.section-description {
+    margin: 0.5rem auto 3rem;
+    color: var(--muted);
+}
+
+.story-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.story-card {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background: var(--paper);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 2px solid var(--night);
+}
+
+.story-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-bottom: 2px solid var(--night);
+}
+
+.story-card h3 {
+    font-size: 1.4rem;
+    color: var(--night);
+    padding: 1.2rem 1.4rem 0;
+}
+
+.story-card p {
+    flex: 1;
+    padding: 0.5rem 1.4rem 1rem;
+    color: var(--muted);
+}
+
+.story-card button {
+    align-self: flex-start;
+    margin: 0 1.4rem 1.4rem;
+    background: var(--coral);
+    color: #fff;
+}
+
+.story-card button:hover {
+    background: #f25151;
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+    .navbar {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .hero {
+        min-height: 70vh;
+    }
+
+    .hero::before {
+        right: -20%;
+        top: 12%;
+        width: 70vw;
+        transform: none;
+        opacity: 0.35;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 3.5rem 6%;
+    }
+
+    .stories {
+        padding: 3.5rem 6%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    button {
+        transition: none;
+    }
+
+    button:hover {
+        transform: none;
+    }
+}
